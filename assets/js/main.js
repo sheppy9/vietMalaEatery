@@ -1,6 +1,6 @@
 // configurations
 let metadata = [
-    { name: 'shopName', content: 'Tete' },
+    { name: 'shopName', content: 'Tê Tê' },
     { name: '<metaName>', content: '<metaContent>' },
 ];
 
