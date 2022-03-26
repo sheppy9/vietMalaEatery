@@ -9,3 +9,5 @@ root
         - js
         - images
 ```
+## Images link
+https://drive.google.com/drive/folders/1phDTrBb5SmKKveSv5vWQFI4rYP55tCxE?usp=sharing
