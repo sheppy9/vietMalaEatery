@@ -13,13 +13,15 @@ const defaultLanguage = languages[0].code;
 const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
-        shopName: 'Tê Tê - Vịt lắc Mala (en)',
+        shopName: 'Tê Tê - Vịt lắc Mala',
+        gallery: 'Gallery',
         contact: 'Contact',
         address: 'Address',
         operatingHours: 'Operating Hours',
     },
     vi: {
         shopName: 'Tê Tê - Vịt lắc Mala',
+        gallery: 'Thư viện ảnh',
         contact: 'gần gủi',
         address: 'địa chỉ',
         operatingHours: 'Giờ hoạt động',
@@ -66,17 +68,46 @@ const cards = [
     {
         activated: true,
         type: 'gallery',
-        classes: 'bg-light bg-gradient',
+        classes: 'container text-center',
+        title: 'gallery',
+        titleClasses: 'text-uppercase',
+        images: [
+            {
+                src: 'assets/images/gallery/1.jpg',
+                alt: 'Image 1'
+            },
+            {
+                src: 'assets/images/gallery/2.jpg',
+                alt: 'Image 2'
+            },
+            {
+                src: 'assets/images/gallery/3.jpg',
+                alt: 'Image 3'
+            },
+            {
+                src: 'assets/images/gallery/4.jpg',
+                alt: 'Image 4'
+            },
+            {
+                src: 'assets/images/gallery/5.jpg',
+                alt: 'Image 5'
+            }
+        ]
     },
     {
         activated: true,
         type: 'map',
-        classes: 'bg-dark bg-gradient',
+        classes: 'text-center m-5',
+        title: '',
+        titleClasses: '',
+        image: 'assets/images/map/map.png',
+        imageClasses: 'rounded mx-auto d-block img-thumbnail',
+        imageLink: 'https://www.google.com/maps/place/T%C3%AA+T%C3%AA+-+V%E1%BB%8Bt+l%E1%BA%AFc+Mala/@10.7734903,106.6757353,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f858d39b447:0x14e05545b45024a!8m2!3d10.773485!4d106.677924'
     },
     {
         activated: true,
         type: 'contact',
-        classes: 'm-3',
+        classes: 'm-5',
         contents: [
             {
                 icon: 'me-1 fas fa-phone-alt',
@@ -106,7 +137,7 @@ const cards = [
     {
         activated: true,
         type: 'footer',
-        classes: '',
+        classes: 'm-5',
         divider: true,
         footerClasses: 'fs-6 fst-italic d-flex justify-content-between align-items-baseline',
         copyrightYear: '2022 ',
@@ -158,7 +189,7 @@ $(function () {
             changeLocale () {
                 i18n.global.locale = this.locale;
             }
-        }
+        },
     });
 
     main.use(i18n);

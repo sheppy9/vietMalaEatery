@@ -76,20 +76,24 @@
 
                 <!-- gallery -->
                 <div v-if="card.type == 'gallery' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
+                    <p v-html="$t(card.title)" :class="card.titleClasses"></p>
+                    <div class="row d-flex justify-content-center">
+                        <img v-for="image in card.images" :src="image.src" alt="image.alt" class="col-3 rounded mx-auto d-block m-1">
+                    </div>
                 </div>
                 <!-- END gallery -->
 
                 <!-- map -->
                 <div v-if="card.type == 'map' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
+                    <p v-html="card.title" :class="card.titleClasses"></p>
+                    <a :href="card.imageLink" target="_blank"><img :src="card.image" :class="card.imageClasses" alt="Map" /></a>
                 </div>
                 <!-- END map -->
 
                 <!-- contact -->
                 <div v-if="card.type == 'contact' && card.activated" :class="card.classes">
                     <div class="row d-flex justify-content-center">
-                        <div v-for="content in card.contents" class="card p-0 m-1 col-sm-3 text-center">
+                        <div v-for="content in card.contents" class="card p-0 m-1 col-3 text-center">
                             <div class="card-header">
                                 <i :class="content.icon"></i>
                                 <span v-html="$t(content.header)"></span>
