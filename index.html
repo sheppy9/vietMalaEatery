@@ -23,17 +23,21 @@
         <main id="main">
 
             <!-- Cards -->
-            <div v-for="card in cards">
+            <div class="container" v-for="card in cards">
 
-                <!-- header -->
+                <!-- languages -->
                 <div v-if="card.type == 'language' && card.activated" :class="card.classes">
-                    <select v-model="locale" @change="changeLocale">
-                        <option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
-                    </select>
-                    <p>{{$t("helloWorld")}}</p>
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
+                    <ul class="nav nav-pills justify-content-end">
+                        <li class="nav-item dropdown">
+                            <select class="form-select" v-model="locale" @change="changeLocale">
+                                <option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
+                            </select>
+                        </li>
+                    </ul>
+
+                    <p v-if="isDev">Multiple language sample: <span class="fw-bold" v-html="$t('helloWorld')"></span></p>
                 </div>
-                <!-- END header -->
+                <!-- END languages -->
 
                 <!-- header -->
                 <div v-if="card.type == 'header' && card.activated" :class="card.classes">

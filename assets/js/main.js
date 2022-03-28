@@ -1,4 +1,5 @@
 // configurations
+const profile = 'dev';
 const metadata = [
     { name: 'shopName', content: 'Tê Tê' },
     { name: '<metaName>', content: '<metaContent>' },
@@ -20,7 +21,7 @@ const cards = [
     {
         activated: true,
         type: 'language',
-        classes: 'bg-primary bg-gradient',
+        classes: 'my-3',
         languages: languages
     },
     {
@@ -96,6 +97,8 @@ $(function () {
         data () {
             return {
                 locale: languages[0].code,
+                isDev: profile === 'dev',
+                isProd: profile === 'prod',
                 cards: cards
             };
         },
