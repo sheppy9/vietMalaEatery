@@ -13,10 +13,16 @@ const defaultLanguage = languages[0].code;
 const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
-        shopName: 'Tê Tê - Vịt lắc Mala',
+        shopName: 'Tê Tê - Vịt lắc Mala (en)',
+        contact: 'Contact',
+        address: 'Address',
+        operatingHours: 'Operating Hours',
     },
     vi: {
         shopName: 'Tê Tê - Vịt lắc Mala',
+        contact: 'gần gủi',
+        address: 'địa chỉ',
+        operatingHours: 'Giờ hoạt động',
     }
 };
 
@@ -70,7 +76,32 @@ const cards = [
     {
         activated: true,
         type: 'contact',
-        classes: 'bg-primary bg-gradient',
+        classes: 'm-3',
+        contents: [
+            {
+                icon: 'me-1 fas fa-phone-alt',
+                header: 'contact',
+                openInNewTab: false,
+                link: 'tel:+840941336161',
+                linkDisplay: '+84 094 133 6161',
+            },
+            {
+                icon: 'me-1 fas fa-map',
+                header: 'address',
+                openInNewTab: true,
+                link: 'https://www.google.com/maps/dir//161+%C4%90.+Cao+Th%E1%BA%AFng,+Ph%C6%B0%E1%BB%9Dng+11,+Qu%E1%BA%ADn+10,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.7734749,106.6757492,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752f20c9128077:0xf59871ecd4cd4925!2m2!1d106.6779379!2d10.7734696',
+                linkDisplay: '161 Cao Thắng Phường 11 Quận 10, TPHCM.',
+            },
+            {
+                icon: 'me-1 fas fa-clock',
+                header: 'operatingHours',
+                contents: [
+                    'Monday - Friday: 7:00 AM - 9:00 PM',
+                    'Saturday: 7:00 AM - 9:00 PM',
+                    'Sunday: 7:00 AM - 9:00 PM',
+                ],
+            }
+        ]
     },
     {
         activated: true,
@@ -79,7 +110,8 @@ const cards = [
         divider: true,
         footerClasses: 'fs-6 fst-italic d-flex justify-content-between align-items-baseline',
         copyrightYear: '2022 ',
-        copyrightMessage: '. All Rights Reserved.',
+        shop: 'shopName',
+        copyrightMessage: ' . All Rights Reserved.',
         socialMedias: [
             {
                 link: 'https://www.facebook.com/tetevitlacmala',

@@ -24,7 +24,7 @@
         <main id="main">
 
             <!-- Cards -->
-            <div class="container" v-for="card in cards">
+            <div class="container-fluid" v-for="card in cards">
 
                 <!-- languages -->
                 <div v-if="card.type == 'language' && card.activated" :class="card.classes">
@@ -88,7 +88,21 @@
 
                 <!-- contact -->
                 <div v-if="card.type == 'contact' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
+                    <div class="row d-flex justify-content-center">
+                        <div v-for="content in card.contents" class="card p-0 m-1 col-sm-3 text-center">
+                            <div class="card-header">
+                                <i :class="content.icon"></i>
+                                <span v-html="$t(content.header)"></span>
+                            </div>
+                            <div v-if="content.link" class="card-body">
+                                <a :href="content.link" v-html="content.linkDisplay" :target="content.openInNewTab ? '_blank' : ''"></a>
+                            </div>
+                            <div v-if="content.contents" class="card-body">
+                                <p v-for="listContent in content.contents" v-html="listContent"></p>
+                            </div>
+                            <div v-if="content.content" class="card-body" v-html="content.content"></div>
+                        </div>
+                    </div>
                 </div>
                 <!-- END contact -->
 
@@ -99,7 +113,7 @@
                         <div>
                             <span>&#169;</span>
                             <span v-html="card.copyrightYear"></span>
-                            <span v-html="$t('shopName')"></span>
+                            <span v-html="$t(card.shop)"></span>
                             <span v-html="card.copyrightMessage"></span>
                         </div>
                         <div :class="card.socialMedias">
