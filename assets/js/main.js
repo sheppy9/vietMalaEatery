@@ -1,19 +1,22 @@
 // configurations
 const profile = 'dev';
+const version = '0.0.1';
+
 const metadata = [
-    { name: 'shopName', content: 'Tê Tê' },
+    { name: 'shopName', content: 'Tê Tê - Vịt lắc Mala' },
+    { name: 'version', content: version },
     { name: '<metaName>', content: '<metaContent>' },
 ];
 
-const languages = [{ code: 'en', name: 'English' }, { code: 'vi', name: 'Tiếng Việt' }];
+const languages = [{ code: 'vi', name: 'Tiếng Việt' }, { code: 'en', name: 'English' }];
 const defaultLanguage = languages[0].code;
 const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
-        helloWorld: 'Hello World'
+        shopName: 'Tê Tê - Vịt lắc Mala',
     },
     vi: {
-        helloWorld: 'Chào thế giới'
+        shopName: 'Tê Tê - Vịt lắc Mala',
     }
 };
 
@@ -72,7 +75,24 @@ const cards = [
     {
         activated: true,
         type: 'footer',
-        classes: 'bg-primary bg-gradient',
+        classes: '',
+        divider: true,
+        footerClasses: 'fs-6 fst-italic d-flex justify-content-between align-items-baseline',
+        copyrightYear: '2022 ',
+        copyrightMessage: '. All Rights Reserved.',
+        socialMedias: [
+            {
+                link: 'https://www.facebook.com/tetevitlacmala',
+                classes: 'm-1 fs-1',
+                icon: 'fab fa-facebook'
+            },
+            {
+                link: '#',
+                classes: 'm-1 fs-1',
+                icon: 'fab fa-instagram'
+            }
+        ]
+
     },
 ];
 // END configurations
@@ -96,7 +116,7 @@ $(function () {
     var main = Vue.createApp({
         data () {
             return {
-                locale: languages[0].code,
+                locale: languages.filter(language => language.code === defaultLanguage)[0].code,
                 isDev: profile === 'dev',
                 isProd: profile === 'prod',
                 cards: cards
@@ -106,9 +126,6 @@ $(function () {
             changeLocale () {
                 i18n.global.locale = this.locale;
             }
-        },
-        mounted () {
-            this.locale = languages.filter(language => language.code === defaultLanguage)[0].code;
         }
     });
 
