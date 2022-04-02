@@ -63,14 +63,61 @@ const cards = [
     {
         activated: true,
         type: 'reviews',
-        classes: 'bg-info bg-gradient',
+        classes: 'container text-center p-3 my-3',
+        title: 'Testimonial',
+        titleClasses: 'h3 text-decoration-underline',
+        footerClasses: 'container text-center',
+        linkClasses: 'mx-2 text-uppercase',
+        testimonialClasses: 'col-lg-3 col-md-5 my-3',
+        testimonialContentClasses: 'text-start text-break',
+        testimonialCommentByClasses: 'text-start text-secondary',
+        testimonialMaxStar: 5,
+        testimonials: [
+            {
+                noOfStar: 4,
+                commentedBy: 'Suju',
+                content: ` Suspendisse finibus aliquet neque vel tincidunt. Curabitur porttitor et risus quis ultrices. Suspendisse sed quam nunc. Aliquam aliquam metus et magna ultrices rhoncus. In nec egestas felis. Duis rutrum quam quis accumsan consequat. Quisque imperdiet mi turpis, eget blandit lectus pretium eget. Nulla facilisi. Nullam non est suscipit, cursus dui ac, laoreet ipsum. Praesent vestibulum libero et leo aliquam, sed dictum urna vehicula. `,
+            },
+            {
+                noOfStar: 5,
+                commentedBy: 'Randy',
+                content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+            },
+            {
+                noOfStar: 3,
+                commentedBy: 'Sheppy',
+                content: ` Nunc venenatis arcu id maximus condimentum. Aliquam erat volutpat. Ut consequat odio et libero commodo, at molestie risus pellentesque. Phasellus aliquet ante vel odio ornare, sit amet varius urna venenatis. Donec luctus viverra sapien, eget tincidunt lectus iaculis a. Nulla purus odio, facilisis id turpis a, aliquam tempus magna. In pharetra metus tellus, at tempus orci pulvinar nec. Sed consectetur dolor risus, sit amet eleifend sapien molestie in. Etiam ac quam lacus. Sed aliquet mauris tortor, eget lacinia nisi rutrum a. `,
+            }
+        ],
+        links: [
+            {
+                href: 'https://search.google.com/local/writereview?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE',
+                text: 'Write a review',
+                target: '_blank',
+            },
+            {
+                href: 'https://search.google.com/local/reviews?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE',
+                text: 'Read more',
+                target: '_blank',
+            }
+        ]
+    },
+    {
+        activated: true,
+        type: 'history',
+        classes: 'container bg-light text-center col-lg-6 col-md-12 p-3 my-3',
+        title: '## History ##',
+        titleClasses: 'h3 text-decoration-underline',
+        content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+        contentClasses: 'container my-5',
     },
     {
         activated: true,
         type: 'gallery',
-        classes: 'container text-center',
+        classes: 'container text-center p-3 my-3',
         title: 'gallery',
         titleClasses: 'text-uppercase',
+        imageClasses: 'col-lg-3 col-md-6 rounded mx-auto d-block m-1',
         images: [
             {
                 src: 'assets/images/gallery/1.jpg',
@@ -97,7 +144,7 @@ const cards = [
     {
         activated: true,
         type: 'map',
-        classes: 'text-center m-5',
+        classes: 'container text-center p-3 my-3',
         title: '',
         titleClasses: '',
         image: 'assets/images/map/map.png',
@@ -107,10 +154,11 @@ const cards = [
     {
         activated: true,
         type: 'contact',
-        classes: 'm-5',
+        classes: 'container text-center p-3 my-3',
         contents: [
             {
                 icon: 'me-1 fas fa-phone-alt',
+                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
                 header: 'contact',
                 openInNewTab: false,
                 link: 'tel:+840941336161',
@@ -118,6 +166,7 @@ const cards = [
             },
             {
                 icon: 'me-1 fas fa-map',
+                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
                 header: 'address',
                 openInNewTab: true,
                 link: 'https://www.google.com/maps/dir//161+%C4%90.+Cao+Th%E1%BA%AFng,+Ph%C6%B0%E1%BB%9Dng+11,+Qu%E1%BA%ADn+10,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.7734749,106.6757492,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752f20c9128077:0xf59871ecd4cd4925!2m2!1d106.6779379!2d10.7734696',
@@ -125,6 +174,7 @@ const cards = [
             },
             {
                 icon: 'me-1 fas fa-clock',
+                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
                 header: 'operatingHours',
                 contents: [
                     'Monday - Friday: 7:00 AM - 9:00 PM',
@@ -146,13 +196,15 @@ const cards = [
         socialMedias: [
             {
                 link: 'https://www.facebook.com/tetevitlacmala',
+                target: '_blank',
                 classes: 'm-1 fs-1',
                 icon: 'fab fa-facebook'
             },
             {
-                link: '#',
+                link: 'https://vt.tiktok.com/ZSdYd44ds/',
+                target: '_blank',
                 classes: 'm-1 fs-1',
-                icon: 'fab fa-instagram'
+                icon: 'fab fa-tiktok'
             }
         ]
 
