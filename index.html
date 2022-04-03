@@ -15,6 +15,8 @@
         <script src="https://unpkg.com/vue@3"></script>
         <script src="https://unpkg.com/vue-i18n@9"></script>
         <script src="assets/js/main.js"></script>
+        <div id="fb-root"></div>
+		    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="3fhM8814"></script>
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,14 +42,15 @@
 
                 <!-- header -->
                 <div v-if="card.type == 'header' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
-                </div>
+					        <p v-html="'<div><img class=\'mx-auto d-block img-fluid w-25\' alt=\'TêTê logo\' src=' + card.img+ '></img></div>'"></p>
+					        <p v-html="'<h1 class=\'text-center cust-font-inkFree\'>' + card.text + '</h1>'"></p>
+				        </div>
                 <!-- END header -->
 
                 <!-- introduction -->
                 <div v-if="card.type == 'introduction' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
-                </div>
+					        <p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p>
+				        </div>
                 <!-- END introduction -->
 
                 <!-- overview -->
@@ -58,7 +61,8 @@
 
                 <!-- updates -->
                 <div v-if="card.type == 'updates' && card.activated" :class="card.classes">
-                    <p v-html="'Implement ' + card.type + ' here'"></p>
+					        <p v-html="card.text"></p>
+					        <p v-html="card.html"></p>
                 </div>
                 <!-- END updates -->
 
