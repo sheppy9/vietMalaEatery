@@ -35,11 +35,7 @@
 	<body>
 		<main id="main">
 			<!-- Cards -->
-			<div class="container-fluid" v-for="card in cards">
-				<!-- languages -->
-				<div v-if="card.type == 'language' && card.activated" :class="card.classes">
-					<ul class="nav nav-pills justify-content-end">
-						<li class="nav-item dropdown">
+			<!-- languages -->
 
 			<div class="" v-for="card in cards">
 				<!-- languages -->
@@ -63,12 +59,12 @@
 
 				<!-- header -->
 				<div v-if="card.type == 'header' && card.activated" :class="card.classes">
-					<p v-html="'<div><img class=\'mx-auto d-block img-fluid w-25\' alt=\'TêTê logo\' src=' + card.img+ '></img></div>'"></p>
-					<p v-html="'<h1 class=\'text-center cust-font-inkFree\'>' + card.text + '</h1>'"></p>
+					<!-- <p v-html="'<div><img class=\'mx-auto d-block img-fluid w-25\' alt=\'TêTê logo\' src=' + card.img+ '></img></div>'"></p>
+					<p v-html="'<h1 class=\'text-center cust-font-inkFree\'>' + card.text + '</h1>'"></p> -->
 
 					<div>
 						<img class='mx-auto img-fluid w-100 h-auto' alt='mala image' style='height: 80rem; width: 100%;' :src=card.image></img>
-					</div>
+					</div> -->
 
 					<p v-html="'<h1 class=\'text-center cust-font-inkFree p-3 my-3\'>' + card.text + '</h1>'"></p>
 				</div>
@@ -133,7 +129,6 @@
 					</div>
 
 					<p v-html="card.html"></p>
-
 				</div>
 				<!-- END updates -->
 
