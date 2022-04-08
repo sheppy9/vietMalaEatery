@@ -40,6 +40,19 @@
 				<div v-if="card.type == 'language' && card.activated" :class="card.classes">
 					<ul class="nav nav-pills justify-content-end">
 						<li class="nav-item dropdown">
+
+			<div class="" v-for="card in cards">
+				<!-- languages -->
+				<div v-if="card.type == 'language' && card.activated" :class="card.classes" :style="card.styles">
+					<ul class="nav nav-pills justify-content-end">
+						<li class="nav-item">
+							<div :class="card.socialMedias">
+								<a v-for="socialMedia in card.socialMedias" :href="socialMedia.link" :class="socialMedia.classes" :target="socialMedia.target">
+									<i :class="socialMedia.icon"></i>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown p-3">
 							<select class="form-select" v-model="locale" @change="changeLocale">
 								<option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
 							</select>
@@ -52,6 +65,12 @@
 				<div v-if="card.type == 'header' && card.activated" :class="card.classes">
 					<p v-html="'<div><img class=\'mx-auto d-block img-fluid w-25\' alt=\'TêTê logo\' src=' + card.img+ '></img></div>'"></p>
 					<p v-html="'<h1 class=\'text-center cust-font-inkFree\'>' + card.text + '</h1>'"></p>
+
+					<div>
+						<img class='mx-auto img-fluid w-100 h-auto' alt='mala image' style='height: 80rem; width: 100%;' :src=card.image></img>
+					</div>
+
+					<p v-html="'<h1 class=\'text-center cust-font-inkFree p-3 my-3\'>' + card.text + '</h1>'"></p>
 				</div>
 				<!-- END header -->
 
@@ -112,6 +131,9 @@
 							</div>
 						</div>
 					</div>
+
+					<p v-html="card.html"></p>
+
 				</div>
 				<!-- END updates -->
 
