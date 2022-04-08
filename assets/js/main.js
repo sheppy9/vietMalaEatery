@@ -43,7 +43,6 @@ const cards = [
 		classes: "navbar fixed-top justify-content-end opacity-75",
 		styles: "",
 		languages: languages,
-		xxxx,
 	},
 	{
 		activated: true,

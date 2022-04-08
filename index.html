@@ -40,16 +40,16 @@
 			<div class="" v-for="card in cards">
 				<!-- languages -->
 				<div v-if="card.type == 'language' && card.activated" :class="card.classes" :style="card.styles">
-					<ul class="nav nav-pills justify-content-end">
-						<li class="nav-item">
+					<ul class="nav nav-pills justify-content-end h-auto w-auto">
+						<!-- <li class="nav-item h-auto w-auto">
 							<div :class="card.socialMedias">
 								<a v-for="socialMedia in card.socialMedias" :href="socialMedia.link" :class="socialMedia.classes" :target="socialMedia.target">
 									<i :class="socialMedia.icon"></i>
 								</a>
 							</div>
-						</li>
-						<li class="nav-item dropdown p-3">
-							<select class="form-select" v-model="locale" @change="changeLocale">
+						</li> -->
+						<li class="nav-item dropdown h-auto w-auto p-3">
+							<select class="form-select " v-model="locale" @change="changeLocale">
 								<option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
 							</select>
 						</li>
