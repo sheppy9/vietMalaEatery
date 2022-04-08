@@ -40,23 +40,10 @@ const cards = [
 		classes: "my-3",
 		languages: languages,
 
-		classes: "navbar fixed-top justify-content-end opacity-100 h-auto w-auto",
+		classes: "navbar fixed-top justify-content-end opacity-75",
 		styles: "",
 		languages: languages,
-		socialMedias: [
-			{
-				link: "https://www.facebook.com/tetevitlacmala",
-				target: "_blank",
-				classes: "p-3 fs-1",
-				icon: "fab fa-facebook",
-			},
-			{
-				link: "https://vt.tiktok.com/ZSdYd44ds/",
-				target: "_blank",
-				classes: "p-3 fs-1",
-				icon: "fab fa-tiktok",
-			},
-		],
+		xxxx,
 	},
 	{
 		activated: true,
