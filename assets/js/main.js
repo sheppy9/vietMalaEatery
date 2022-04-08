@@ -37,14 +37,29 @@ const cards = [
 	{
 		activated: true,
 		type: "language",
-		classes: "my-3",
+		classes: "navbar fixed-top justify-content-end opacity-100 h-auto w-auto",
+		styles: "",
 		languages: languages,
+		socialMedias: [
+			{
+				link: "https://www.facebook.com/tetevitlacmala",
+				target: "_blank",
+				classes: "p-3 fs-1",
+				icon: "fab fa-facebook",
+			},
+			{
+				link: "https://vt.tiktok.com/ZSdYd44ds/",
+				target: "_blank",
+				classes: "p-3 fs-1",
+				icon: "fab fa-tiktok",
+			},
+		],
 	},
 	{
 		activated: true,
 		type: "header",
 		classes: "bg-dark.bg-gradient",
-		img: "assets/img/header/LandingPage.JPG",
+		image: "assets/images/header/LandingPage.png",
 		text: "Tê Tê - Vịt lắc Mala",
 	},
 	{
