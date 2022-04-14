@@ -67,7 +67,17 @@
 
 				<!-- introduction -->
 				<div v-if="card.type == 'introduction' && card.activated" :class="card.classes">
-					<p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p>
+					<!-- <p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p> -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-4 offset-md-1" v-for="text in card.texting">
+								<span class="">{{$t(text.text)}}</span>
+								<br>
+								<br>
+								<br>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- END introduction -->
 
@@ -80,13 +90,46 @@
 				<!-- updates -->
 				<div v-if="card.type == 'updates' && card.activated" :class="card.classes">
 					<p v-html="card.text"></p>
-					<p v-html="card.html"></p>
+					<p>
+						<div class="container">
+							<div class="row">
+								<div
+								class="fb-page pb-5"
+								data-href="https://www.facebook.com/tetevitlacmala"
+								data-tabs="timeline,events,messages"
+								data-width=""
+								data-height=""
+								data-small-header="false"
+								data-adapt-container-width="true"
+								data-hide-cover="false"
+								data-show-facepile="true"
+								>
+								<blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">
+									<a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>
+								</blockquote>
+								</div>
+							</div>
+						</div>
+					</p>
 				</div>
 				<!-- END updates -->
 
 				<!-- menu -->
 				<div v-if="card.type == 'menu' && card.activated" :class="card.classes">
-					<p v-html="'Implement ' + card.type + ' here'"></p>
+					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col">
+							<img class="p-3" :src="card.image1" style='height: 35rem; width: 25rem;'></img>
+						</div>
+						<div class="col">
+							<img class="p-3" :src="card.image2" style='height: 35rem; width: 25rem;'></img>
+						</div>
+							
+					</div>
+					
+					
 				</div>
 				<!-- END menu -->
 

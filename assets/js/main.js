@@ -19,6 +19,13 @@ const fallbackLanguage = languages[1].code;
 const i18nMessages = {
 	en: {
 		shopName: "Tê Tê - Vịt lắc Mala",
+		introduction1: "Các món được om kĩ trong nước soup có hơn 11 vị thảo mộc nên khi ăn có vị vừa tê nhẹ của hoa tiêu, vị cay vừa phải của ớt khô tứ xuyên.",
+		introduction2: "Ăn kèm với sốt mala đặc biệt của quán sẽ đậm đà hơn, khách có thể chọn vị cay và tê phù hợp với khẩu vị.",
+		introduction3: "Ngoài ra, quán còn có bột ớt mala để chấm cùng, bột ớt ngoài vị tê và cay thì vị béo nhẹ của đậu phộng, ăn kèm ngon hết sẩy.",
+		introduction4: "Các món được nấu thủ công, không hoá chất, và đóng gói mới hằng ngày.",
+		introduction5: "Quy trình đóng gói sạch sẽ, được hút chân không nên an tâm sử dụng nhé.",
+		introduction6: "Có thể trữ ngăn đông và làm nóng 3p có thể sử dụng được ngay.",
+		menu: "Menu",
 		gallery: "Gallery",
 		contact: "Contact",
 		address: "Address",
@@ -26,6 +33,13 @@ const i18nMessages = {
 	},
 	vi: {
 		shopName: "Tê Tê - Vịt lắc Mala",
+		introduction1: "Các món được om kĩ trong nước soup có hơn 11 vị thảo mộc nên khi ăn có vị vừa tê nhẹ của hoa tiêu, vị cay vừa phải của ớt khô tứ xuyên.",
+		introduction2: "Ăn kèm với sốt mala đặc biệt của quán sẽ đậm đà hơn, khách có thể chọn vị cay và tê phù hợp với khẩu vị.",
+		introduction3: "Ngoài ra, quán còn có bột ớt mala để chấm cùng, bột ớt ngoài vị tê và cay thì vị béo nhẹ của đậu phộng, ăn kèm ngon hết sẩy.",
+		introduction4: "Các món được nấu thủ công, không hoá chất, và đóng gói mới hằng ngày.",
+		introduction5: "Quy trình đóng gói sạch sẽ, được hút chân không nên an tâm sử dụng nhé.",
+		introduction6: "Có thể trữ ngăn đông và làm nóng 3p có thể sử dụng được ngay.",
+		menu: "Menu",
 		gallery: "Thư viện ảnh",
 		contact: "gần gủi",
 		address: "địa chỉ",
@@ -58,18 +72,15 @@ const cards = [
 	{
 		activated: true,
 		type: "header",
-		classes: "bg-dark.bg-gradient",
+		classes: "bg-light bg-gradient",
 		image: "assets/images/header/LandingPage.png",
 		text: "Tê Tê - Vịt lắc Mala",
 	},
 	{
 		activated: true,
 		type: "introduction",
-		classes: "container bg-light.bg-gradient text-center col-lg-6 col-md-12 p-3 my-3",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in\
-		 reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, \
-		 sunt in culpa qui officia deserunt mollit anim id est laborum",
+		classes: "container bg-light bg-gradient text-center col-lg-6 col-md-12 p-3 my-3",
+		texting: [{ text: "introduction1" }, { text: "introduction2" }, { text: "introduction3" }, { text: "introduction4" }, { text: "introduction5" }, { text: "introduction6" }],
 	},
 	{
 		activated: false,
@@ -79,32 +90,17 @@ const cards = [
 	{
 		activated: true,
 		type: "updates",
-		classes: "bg-light.bg-gradient",
+		classes: "bg-light bg-gradient",
 		text: "<h3 class='text-center pb-4 pt-4'>Latest Updates</h3>",
-		html: '<div class="container">\
-      <div class="row">\
-        <div\
-          class="fb-page pb-5"\
-          data-href="https://www.facebook.com/tetevitlacmala"\
-          data-tabs="timeline,events,messages"\
-          data-width=""\
-          data-height=""\
-          data-small-header="false"\
-          data-adapt-container-width="true"\
-          data-hide-cover="false"\
-          data-show-facepile="true"\
-        >\
-          <blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">\
-            <a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>\
-          </blockquote>\
-        </div>\
-      </div>\
-    </div>',
 	},
 	{
 		activated: true,
 		type: "menu",
-		classes: "bg-warning bg-gradient",
+		classes: "bg-light bg-gradient container text-center p-3 my-3",
+		titleClasses: "h3 text-decoration-underline",
+		title: "menu",
+		image1: "assets/images/menu/malaMenu1.png",
+		image2: "assets/images/menu/malaMenu2.png",
 	},
 	{
 		activated: true,
