@@ -75,11 +75,9 @@
 					<!-- <p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p> -->
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-4 offset-md-1" v-for="text in card.texting">
+							<div class="col-lg-6 col-s-2 p-5" v-for="text in card.texting">
 								<span class="">{{$t(text.text)}}</span>
-								<br>
-								<br>
-								<br>
+								
 							</div>
 						</div>
 					</div>
@@ -109,14 +107,14 @@
 								data-hide-cover="false"
 								data-show-facepile="true"
 								>
-								<blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">
-									<a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>
-								</blockquote>
+									<blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">
+										<a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>
+									</blockquote>
 								</div>
 							</div>
 						</div>
 
-						<div class="row">
+						<!-- <div class="row">
 							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
@@ -138,8 +136,8 @@
 									<span class="sr-only">Next</span>
 								</a>
 							</div>
-						</div>
-					</div>
+						</div> -->
+					
 
 					<p v-html="card.html"></p>
 				</div>

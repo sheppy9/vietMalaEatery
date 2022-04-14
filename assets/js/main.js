@@ -68,7 +68,7 @@ const cards = [
 	{
 		activated: true,
 		type: "introduction",
-		classes: "container bg-light bg-gradient text-center col-lg-6 col-md-12 p-3 my-3",
+		classes: "container bg-light bg-gradient text-center",
 		texting: [{ text: "introduction1" }, { text: "introduction2" }, { text: "introduction3" }, { text: "introduction4" }, { text: "introduction5" }, { text: "introduction6" }],
 	},
 	{
@@ -81,7 +81,6 @@ const cards = [
 		type: "updates",
 		classes: "bg-light bg-gradient",
 		text: "<h3 class='text-center pb-4 pt-4'>Latest Updates</h3>",
-		fbhtml: "",
 	},
 	{
 		activated: true,
