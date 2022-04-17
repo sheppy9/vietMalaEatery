@@ -72,7 +72,7 @@ const cards = [
 		activated: true,
 		type: "header",
 		classes: "bg-light bg-gradient",
-		image: "assets/images/header/LandingPage.png",
+		image: "assets/images/header/LandingPage.jpg",
 		text: "Tê Tê - Vịt lắc Mala",
 	},
 	{
