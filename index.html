@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Tê Tê - Vịt lắc Mala</title>
+		<link rel="icon" type="image/x-icon" href="assets/images/header/TeTe_logo.png">
 		<link rel="icon" type="image/x-icon" href="assets/images/header/TeTe_logo.png">
 		<link rel="preload" href="assets/images/header/LandingPage.png" as="image">
 		<!-- Stylesheets -->
@@ -37,8 +37,8 @@
 			<!-- Cards -->
 			<!-- languages -->
 
-			<div class="" v-for="card in cards">
-				<!-- languages -->
+			<!-- languages -->
+
 				<div v-if="card.type == 'language' && card.activated" :class="card.classes" :style="card.styles">
 					<ul class="nav nav-pills justify-content-end h-auto w-auto">
 						<li class="nav-item h-auto w-auto">
@@ -50,14 +50,33 @@
 						</li>
 						<li class="nav-item dropdown h-auto w-auto p-3">
 							<select class="form-select " v-model="locale" @change="changeLocale">
-								<option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
+						<li class="nav-item h-auto w-auto">
+							<div :class="card.socialMedias">
+								<a v-for="socialMedia in card.socialMedias" :href="socialMedia.link" :class="socialMedia.classes" :target="socialMedia.target">
+									<i :class="socialMedia.icon"></i>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown h-auto w-auto p-3">
+							<select class="form-select " v-model="locale" @change="changeLocale">
+					<div>
+						<img class='mx-auto img-fluid w-100 h-auto' alt='mala image' :src=card.image loading="lazy"></img>
+					</div>
 							</select>
 						</li>
 					</ul>
 				</div>
 				<!-- END languages -->
 
-				<!-- header -->
+					<!-- <p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p> -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-6 col-s-2 p-5" v-for="text in card.texting">
+								<span class="">{{$t(text.text)}}</span>
+								
+							</div>
+						</div>
+					</div>
 				<div v-if="card.type == 'header' && card.activated" :class="card.classes">
 					<div>
 						<img class='mx-auto img-fluid w-100 h-auto' alt='mala image' :src=card.image loading="lazy"></img>
@@ -70,13 +89,92 @@
 				<div v-if="card.type == 'introduction' && card.activated" :class="card.classes">
 					<!-- <p v-html="'<p class=\'text-center\'>' + card.text + '</p>'"></p> -->
 					<div class="container-fluid">
-						<div class="row">
+					<p>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-5 col-md-12 col-sm-12">
+									<div
+										class="fb-page pb-5"
+										data-href="https://www.facebook.com/tetevitlacmala"
+										data-tabs="timeline,events,messages"
+										data-width=""
+										data-height=""
+										data-small-header="false"
+										data-adapt-container-width="true"
+										data-hide-cover="false"
+										data-show-facepile="true"
+										>
+									<blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">
+										<a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>
+									</blockquote>
+									</div>
+								</div>
+
+								<!-- Carousel -->
+								<div class="col-sm-12 col-lg-7 col-md-12">
+									<div id="malaCarousel" class="carousel slide" data-bs-ride="carousel">
+										<!-- Indicators -->
+										<div class="carousel-indicators">
+											<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+											<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+											<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+											<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+											<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+										</div>
+									
+										<!-- Wrapper for slides -->
+										<div class="carousel-inner" role="listbox">
+									
+											<div class="carousel-item active">
+												<img class="d-block w-100" :src="card.imageActive" style="height: 30rem;" alt="Chania">
+											</div>
+											
+											<div class="carousel-item" v-for="image in card.images">
+												<img class="d-block w-100" style="height: 30rem;" :src="image.src" :alt="image.alt">
+											</div>
+											
+										</div>
+									
+										<!-- Left and right controls -->
+										<button class="carousel-control-prev"  type="button" data-bs-target="#malaCarousel" data-bs-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next"  type="button" data-bs-target="#malaCarousel" data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+									</div>
+								</div>
+								<!-- end carousel -->
+								
+								
+							</div>
+						</div>
+
+							
+					
+
+					<!-- <p v-html="card.html"></p> -->
 							<div class="col-lg-6 col-s-2 p-5" v-for="text in card.texting">
 								<span class="">{{$t(text.text)}}</span>
 								
 							</div>
 						</div>
+					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col">
+							<img class="p-3" :src="card.image1" style='height: 35rem; width: 25rem;' loading="lazy"></img>
+						</div>
+						<div class="col">
+							<img class="p-3" :src="card.image2" style='height: 35rem; width: 25rem;' loading="lazy"></img>
+						</div>
+							
 					</div>
+					
+					
 				</div>
 				<!-- END introduction -->
 
