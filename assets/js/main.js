@@ -1,4 +1,3 @@
-/** @format */
 
 // configurations
 const profile = "dev";
