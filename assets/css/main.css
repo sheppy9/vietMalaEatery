@@ -52,3 +52,8 @@
     --bs-body-color: #212529;
     --bs-body-bg: #fff;
 }
+/* Customizing fonts */
+.cust-font-inkFree {
+	font-family: Ink Free, Helvetica, Arial;
+}
+
