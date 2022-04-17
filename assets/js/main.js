@@ -177,9 +177,7 @@ const cards = [
                 classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
                 header: 'operatingHours',
                 contents: [
-                    'Monday - Friday: 7:00 AM - 9:00 PM',
-                    'Saturday: 7:00 AM - 9:00 PM',
-                    'Sunday: 7:00 AM - 9:00 PM',
+					'Monday - Sunday: 01:00 PM - 09:00 PM'
                 ],
             }
         ]
