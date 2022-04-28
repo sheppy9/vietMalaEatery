@@ -72,7 +72,8 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-6 col-s-2 p-5" v-for="text in card.texting">
-								<span class="">{{$t(text.text)}}</span>
+								<i class="fa-solid fa-check"></i>
+								<span>{{$t(text.text)}}</span>
 								
 							</div>
 						</div>
@@ -88,7 +89,7 @@
 
 				<!-- updates -->
 				<div v-if="card.type == 'updates' && card.activated" :class="card.classes">
-					<p v-html="card.text"></p>
+					<p :class="card.titleClasses" v-html="card.title"></p>
 					<p>
 						<div class="container">
 							<div class="row">

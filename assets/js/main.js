@@ -1,3 +1,4 @@
+/** @format */
 
 // configurations
 const profile = "dev";
@@ -89,6 +90,8 @@ const cards = [
 		activated: true,
 		type: "updates",
 		classes: "bg-light bg-gradient",
+		title: "Latest Updates",
+		titleClasses: "h3 text-decoration-underline text-center pb-4 pt-4",
 		text: "<h3 class='text-center pb-4 pt-4'>Latest Updates</h3>",
 		activated: true,
 		imageClasses: "col-lg-3 col-md-6 rounded mx-auto d-block m-1",
@@ -106,10 +109,6 @@ const cards = [
 				src: "assets/images/gallery/4.jpg",
 				alt: "Image 4",
 			},
-			{
-				src: "assets/images/gallery/5.jpg",
-				alt: "Image 5",
-			},
 		],
 	},
 	{
@@ -118,8 +117,8 @@ const cards = [
 		classes: "bg-light bg-gradient container text-center p-3 my-3",
 		titleClasses: "h3 text-decoration-underline",
 		title: "menu",
-		image1: "assets/images/menu/malaMenu1.png",
-		image2: "assets/images/menu/malaMenu2.png",
+		image1: "assets/images/menu/malaMenu1.jpg",
+		image2: "assets/images/menu/malaMenu2.jpg",
 	},
 	{
 		activated: true,
@@ -195,10 +194,6 @@ const cards = [
 			{
 				src: "assets/images/gallery/4.jpg",
 				alt: "Image 4",
-			},
-			{
-				src: "assets/images/gallery/5.jpg",
-				alt: "Image 5",
 			},
 		],
 	},
