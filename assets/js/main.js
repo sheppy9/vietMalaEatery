@@ -202,7 +202,7 @@ const cards = [
 		classes: "container text-center p-3 my-3",
 		title: "",
 		titleClasses: "",
-		image: "assets/images/map/map.png",
+		image: "assets/images/map/map.jpg",
 		imageClasses: "rounded mx-auto d-block img-thumbnail",
 		imageLink:
 			"https://www.google.com/maps/place/T%C3%AA+T%C3%AA+-+V%E1%BB%8Bt+l%E1%BA%AFc+Mala/@10.7734903,106.6757353,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f858d39b447:0x14e05545b45024a!8m2!3d10.773485!4d106.677924",
@@ -230,11 +230,11 @@ const cards = [
 			},
 			{
 				icon: 'me-1 fas fa-clock',
-                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
-                header: 'operatingHours',
-                contents: [
+				classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
+				header: 'operatingHours',
+				contents: [
 					'Monday - Sunday: 01:00 PM - 09:00 PM'
-                ],
+				],
 			}
 		]
 	},
@@ -285,7 +285,7 @@ $(function () {
 
 	// creating Vue instance
 	var main = Vue.createApp({
-		data() {
+		data () {
 			return {
 				locale: languages.filter((language) => language.code === defaultLanguage)[0].code,
 				isDev: profile === "dev",
@@ -294,7 +294,7 @@ $(function () {
 			};
 		},
 		methods: {
-			changeLocale() {
+			changeLocale () {
 				i18n.global.locale = this.locale;
 			},
 		},
