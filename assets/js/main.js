@@ -111,7 +111,7 @@ const cards = [
         ],
     },
     {
-        activated: true,
+        activated: false,
         type: "menu",
         classes: "bg-light bg-gradient container text-center p-3 my-3",
         titleClasses: "h1 text-decoration-underline",
