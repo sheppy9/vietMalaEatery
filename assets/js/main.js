@@ -1,5 +1,3 @@
-/** @format */
-
 // configurations
 const profile = "dev";
 const version = "0.0.1";
@@ -14,6 +12,7 @@ const languages = [
 	{ code: "vi", name: "Tiếng Việt" },
 	{ code: "en", name: "English" },
 ];
+
 const defaultLanguage = languages[0].code;
 const fallbackLanguage = languages[1].code;
 const i18nMessages = {
@@ -230,12 +229,14 @@ const cards = [
 				linkDisplay: "161 Cao Thắng Phường 11 Quận 10, TPHCM.",
 			},
 			{
-				icon: "me-1 fas fa-clock",
-				classes: "p-0 m-1 col-lg-3 col-md-10 text-center",
-				header: "operatingHours",
-				contents: ["Monday - Friday: 7:00 AM - 9:00 PM", "Saturday: 7:00 AM - 9:00 PM", "Sunday: 7:00 AM - 9:00 PM"],
-			},
-		],
+				icon: 'me-1 fas fa-clock',
+                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
+                header: 'operatingHours',
+                contents: [
+					'Monday - Sunday: 01:00 PM - 09:00 PM'
+                ],
+			}
+		]
 	},
 	{
 		activated: true,
