@@ -86,7 +86,7 @@ const cards = [
         classes: "bg-success bg-gradient",
     },
     {
-        activated: true,
+        activated: false,
         type: "updates",
         classes: "bg-light bg-gradient",
         title: "Latest Updates",
