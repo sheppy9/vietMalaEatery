@@ -35,6 +35,7 @@ const i18nMessages = {
         readMore: "Read More",
         history: "History",
         map: "Map",
+        operatingHourContent: "Monday - Sunday:<br/>01:00 PM - 09:00 PM",
         rightReservedMsg: " . All Rights Reserved."
     },
     vi: {
@@ -56,6 +57,7 @@ const i18nMessages = {
         readMore: "Đọc thêm",
         history: "sử học",
         map: "bản đồ",
+        operatingHourContent: "Thứ hai - Chủ nhật:<br/>01:00 PM - 09:00 PM",
         rightReservedMsg: " . Đã đăng ký Bản quyền."
     },
 };
@@ -213,7 +215,7 @@ const cards = [
     {
         activated: true,
         type: "map",
-        classes: "container h1 text-center p-3 my-3",
+        classes: "container-fluid h1 text-center",
         title: "map",
         titleClasses: "text-upper",
         image: "assets/images/map/map.jpg",
@@ -224,11 +226,11 @@ const cards = [
     {
         activated: true,
         type: "contact",
-        classes: "h1 container text-center p-3 my-3",
+        classes: "h1 container-fluid text-center p-3 my-3",
         contents: [
             {
                 icon: "me-1 fas fa-phone-alt",
-                classes: "p-0 m-1 col-lg-3 col-md-10 text-center",
+                classes: "p-0 m-1 col-lg-3 col-md-11 text-center",
                 header: "contact",
                 openInNewTab: false,
                 link: "tel:+840941336161",
@@ -236,7 +238,7 @@ const cards = [
             },
             {
                 icon: "me-1 fas fa-map",
-                classes: "p-0 m-1 col-lg-3 col-md-10 text-center",
+                classes: "p-0 m-1 col-lg-3 col-md-11 text-center",
                 header: "address",
                 openInNewTab: true,
                 link: "https://www.google.com/maps/dir//161+%C4%90.+Cao+Th%E1%BA%AFng,+Ph%C6%B0%E1%BB%9Dng+11,+Qu%E1%BA%ADn+10,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.7734749,106.6757492,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752f20c9128077:0xf59871ecd4cd4925!2m2!1d106.6779379!2d10.7734696",
@@ -244,10 +246,10 @@ const cards = [
             },
             {
                 icon: 'me-1 fas fa-clock',
-                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
+                classes: 'p-0 m-1 col-lg-3 col-md-11 text-center',
                 header: 'operatingHours',
                 contents: [
-                    'Monday - Sunday:<br/>01:00 PM - 09:00 PM'
+                    'operatingHourContent'
                 ],
             }
         ]

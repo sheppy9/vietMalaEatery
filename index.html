@@ -25,10 +25,10 @@
 
 	<body>
 		<main id="main">
-			<!-- Cards -->
-			<!-- languages -->
 
+			<!-- Cards -->
 			<div class="" v-for="card in cards">
+
 				<!-- languages -->
 				<div v-if="card.type == 'language' && card.activated" :class="card.classes" :style="card.styles">
 					<ul class="nav nav-pills justify-content-end h-auto w-auto">
@@ -192,7 +192,7 @@
 								<a :href="content.link" v-html="content.linkDisplay" :target="content.openInNewTab ? '_blank' : ''"></a>
 							</div>
 							<div v-if="content.contents" class="card-body">
-								<p v-for="listContent in content.contents" v-html="listContent"></p>
+								<p v-for="listContent in content.contents" v-html="$t(listContent)"></p>
 							</div>
 							<div v-if="content.content" class="card-body" v-html="content.content"></div>
 						</div>
@@ -218,6 +218,7 @@
 					</div>
 				</div>
 				<!-- END footer -->
+
 			</div>
 			<!-- END Cards -->
 		</main>
