@@ -18,17 +18,24 @@ const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
         shopName: "Tê Tê - Vịt lắc Mala",
-        introduction1: "Các món được om kĩ trong nước soup có hơn 11 vị thảo mộc nên khi ăn có vị vừa tê nhẹ của hoa tiêu, vị cay vừa phải của ớt khô tứ xuyên.",
-        introduction2: "Ăn kèm với sốt mala đặc biệt của quán sẽ đậm đà hơn, khách có thể chọn vị cay và tê phù hợp với khẩu vị.",
-        introduction3: "Ngoài ra, quán còn có bột ớt mala để chấm cùng, bột ớt ngoài vị tê và cay thì vị béo nhẹ của đậu phộng, ăn kèm ngon hết sẩy.",
-        introduction4: "Các món được nấu thủ công, không hoá chất, và đóng gói mới hằng ngày.",
-        introduction5: "Quy trình đóng gói sạch sẽ, được hút chân không nên an tâm sử dụng nhé.",
-        introduction6: "Có thể trữ ngăn đông và làm nóng 3p có thể sử dụng được ngay.",
+        introduction1: "The dishes are carefully braised in the soup with more than 11 herbs, so when eaten, it has the mild numbing taste of the pilot, the moderate spicy taste of the Sichuan dried chili.",
+        introduction2: "Served with the restaurant's special mala sauce will be richer, guests can choose the spicy and numbing taste to suit their taste.",
+        introduction3: "In addition, the shop also has mala chili powder for dipping, chili powder in addition to the numb and spicy taste, the light fat taste of peanuts, delicious to eat.",
+        introduction4: "The dishes are handmade, chemical-free, and packed fresh daily.",
+        introduction5: "The packaging process is clean, vacuum sealed, so it is safe to use.",
+        introduction6: "Can be stored in the freezer and heated for 3 minutes and can be used immediately.",
         menu: "Menu",
         gallery: "Gallery",
         contact: "Contact",
         address: "Address",
         operatingHours: "Operating Hours",
+        latestUpdates: "Latest Updates",
+        testimonial: "Testimonial",
+        writeAReview: "Write A Review",
+        readMore: "Read More",
+        history: "History",
+        map: "Map",
+        rightReservedMsg: " . All Rights Reserved."
     },
     vi: {
         shopName: "Tê Tê - Vịt lắc Mala",
@@ -43,6 +50,13 @@ const i18nMessages = {
         contact: "gần gủi",
         address: "địa chỉ",
         operatingHours: "Giờ hoạt động",
+        latestUpdates: "cập nhật mới nhất",
+        testimonial: "tiền hoặc vật tặng",
+        writeAReview: "viết đánh giá",
+        readMore: "Đọc thêm",
+        history: "sử học",
+        map: "bản đồ",
+        rightReservedMsg: " . Đã đăng ký Bản quyền."
     },
 };
 
@@ -70,14 +84,14 @@ const cards = [
     {
         activated: true,
         type: "header",
-        classes: "bg-light bg-gradient",
+        classes: "",
         image: "assets/images/header/LandingPage.jpg",
         text: "shopName",
     },
     {
         activated: true,
         type: "introduction",
-        classes: "container bg-light bg-gradient text-center",
+        classes: "container text-center",
         texting: [{ text: "introduction1" }, { text: "introduction2" }, { text: "introduction3" }, { text: "introduction4" }, { text: "introduction5" }, { text: "introduction6" }],
     },
     {
@@ -88,8 +102,8 @@ const cards = [
     {
         activated: true,
         type: "updates",
-        classes: "bg-light bg-gradient",
-        title: "Latest Updates",
+        classes: "",
+        title: "latestUpdates",
         titleClasses: "h1 text-decoration-underline text-center pb-4 pt-4",
         text: "<h3 class='text-center pb-4 pt-4'>Latest Updates</h3>",
         activated: true,
@@ -123,7 +137,7 @@ const cards = [
         activated: true,
         type: "reviews",
         classes: "container text-center p-3 my-3",
-        title: "Testimonial",
+        title: "testimonial",
         titleClasses: "h1 text-decoration-underline",
         footerClasses: "container text-center",
         linkClasses: "mx-2 text-uppercase",
@@ -151,22 +165,22 @@ const cards = [
         links: [
             {
                 href: "https://search.google.com/local/writereview?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE",
-                text: "Write a review",
+                text: "writeAReview",
                 target: "_blank",
             },
             {
                 href: "https://search.google.com/local/reviews?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE",
-                text: "Read more",
+                text: "readMore",
                 target: "_blank",
             },
         ],
     },
     {
-        activated: true,
+        activated: false,
         type: "history",
         classes: "container bg-light text-center col-lg-12 col-md-12 p-3 my-3",
-        title: "## History ##",
-        titleClasses: "h1 text-decoration-underline",
+        title: "History",
+        titleClasses: "h1",
         content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
         contentClasses: "container my-5 h3",
     },
@@ -199,9 +213,9 @@ const cards = [
     {
         activated: true,
         type: "map",
-        classes: "container text-center p-3 my-3",
-        title: "",
-        titleClasses: "",
+        classes: "container h1 text-center p-3 my-3",
+        title: "map",
+        titleClasses: "text-upper",
         image: "assets/images/map/map.jpg",
         imageClasses: "rounded mx-auto d-block img-thumbnail",
         imageLink:
@@ -233,7 +247,7 @@ const cards = [
                 classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
                 header: 'operatingHours',
                 contents: [
-                    'Monday - Sunday: 01:00 PM - 09:00 PM'
+                    'Monday - Sunday:<br/>01:00 PM - 09:00 PM'
                 ],
             }
         ]
@@ -246,7 +260,7 @@ const cards = [
         footerClasses: "h3 fst-italic d-flex justify-content-between align-items-baseline",
         copyrightYear: "2022 ",
         shop: "shopName",
-        copyrightMessage: " . All Rights Reserved.",
+        copyrightMessage: "rightReservedMsg",
         socialMedias: [
             {
                 link: "https://www.facebook.com/tetevitlacmala",

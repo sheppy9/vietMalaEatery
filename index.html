@@ -41,7 +41,7 @@
 						</li>
 						<li class="nav-item dropdown h-auto w-auto p-3">
 							<select class="form-select " v-model="locale" @change="changeLocale">
-								<option v-for="lang in card.languages" :value="lang.code">{{ lang.name }}</option>
+								<option v-for="lang in card.languages" :value="lang.code" v-html="lang.name"></option>
 							</select>
 						</li>
 					</ul>
@@ -78,40 +78,23 @@
 
 				<!-- updates -->
 				<div v-if="card.type == 'updates' && card.activated" :class="card.classes">
-					<p :class="card.titleClasses" v-html="card.title"></p>
+					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
 					<div class="container text-center">
 						<div class="row d-flex justify-content-center">
-							<!-- <div class="col-lg-5 col-md-12 col-sm-12">
-								<div class="fb-page pb-5" data-href="https://www.facebook.com/tetevitlacmala" data-tabs="timeline,events,messages" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-									<blockquote cite="https://www.facebook.com/tetevitlacmala/" class="fb-xfbml-parse-ignore">
-										<a href="https://www.facebook.com/tetevitlacmala/">tete vit lac mala</a>
-									</blockquote>
-								</div>
-							</div> -->
 
 							<!-- Carousel -->
 							<div class="col-lg-7 col-sm-12 col-md-12">
 								<div id="malaCarousel" class="carousel slide" data-bs-ride="carousel">
 									<!-- Indicators -->
 									<div class="carousel-indicators">
-										<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-										<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-										<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-										<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-										<button type="button" data-bs-target="#malaCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+										<button type="button" v-for="i in card.images.length" data-bs-target="#malaCarousel" :data-bs-slide-to="i-1" :class="[{active:i==1}]"></button>
 									</div>
 
 									<!-- Wrapper for slides -->
 									<div class="carousel-inner" role="listbox">
-
-										<div class="carousel-item active">
-											<img class="d-block w-100" :src="card.imageActive" style="height: 30rem;" alt="Chania">
-										</div>
-
-										<div class="carousel-item" v-for="image in card.images">
+										<div :class="['carousel-item', {active:index==0}]" v-for="image, index in card.images">
 											<img class="d-block w-100" style="height: 30rem;" :src="image.src" :alt="image.alt">
 										</div>
-
 									</div>
 
 									<!-- Left and right controls -->
@@ -151,7 +134,7 @@
 
 				<!-- reviews -->
 				<div v-if="card.type == 'reviews' && card.activated" :class="card.classes">
-					<p :class="card.titleClasses" v-html="card.title"></p>
+					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
 					<div class="container d-flex justify-content-center row d-gap gap-3">
 						<div v-for="testimonial in card.testimonials" :class="card.testimonialClasses">
 							<div :class="card.testimonialContentClasses" v-html="testimonial.content"></div>
@@ -167,14 +150,14 @@
 						</div>
 					</div>
 					<div class="h2 container text-center">
-						<a v-for="link in card.links" :href="link.href" :class="card.linkClasses" :target="link.target" v-html="link.text"></a>
+						<a v-for="link in card.links" :href="link.href" :class="card.linkClasses" :target="link.target" v-html="$t(link.text)"></a>
 					</div>
 				</div>
 				<!-- END reviews -->
 
 				<!-- history -->
 				<div v-if="card.type == 'history' && card.activated" :class="card.classes">
-					<p :class="card.titleClasses" v-html="card.title"></p>
+					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
 					<div :class="card.contentClasses" v-html="card.content"></div>
 				</div>
 				<!-- END history -->
@@ -190,7 +173,7 @@
 
 				<!-- map -->
 				<div v-if="card.type == 'map' && card.activated" :class="card.classes">
-					<p v-html="card.title" :class="card.titleClasses"></p>
+					<p v-html="$t(card.title)" :class="card.titleClasses"></p>
 					<a :href="card.imageLink" target="_blank">
 						<img :src="card.image" :class="card.imageClasses" alt="Map" />
 					</a>
@@ -225,7 +208,7 @@
 							<span>&#169;</span>
 							<span v-html="card.copyrightYear"></span>
 							<span v-html="$t(card.shop)"></span>
-							<span v-html="card.copyrightMessage"></span>
+							<span v-html="$t(card.copyrightMessage)"></span>
 						</div>
 						<div :class="card.socialMedias">
 							<a v-for="socialMedia in card.socialMedias" :href="socialMedia.link" :class="socialMedia.classes" :target="socialMedia.target">
