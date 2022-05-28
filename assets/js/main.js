@@ -138,7 +138,7 @@ const cards = [
     {
         activated: true,
         type: "reviews",
-        classes: "container text-center p-3 my-3",
+        classes: "container-fluid text-center p-3 my-3",
         title: "testimonial",
         titleClasses: "h1 text-decoration-underline",
         footerClasses: "container text-center",
@@ -147,7 +147,9 @@ const cards = [
         testimonialContentClasses: "text-start text-break h3",
         testimonialCommentByClasses: "text-start text-secondary",
         testimonialMaxStar: 5,
-        testimonials: [
+        // testimonialType: "text",
+        testimonialType: "image",
+        textTestimonials: [
             {
                 noOfStar: 4,
                 commentedBy: "Suju",
@@ -163,6 +165,24 @@ const cards = [
                 commentedBy: "Sheppy",
                 content: ` Nunc venenatis arcu id maximus condimentum. Aliquam erat volutpat. Ut consequat odio et libero commodo, at molestie risus pellentesque. Phasellus aliquet ante vel odio ornare, sit amet varius urna venenatis. Donec luctus viverra sapien, eget tincidunt lectus iaculis a. Nulla purus odio, facilisis id turpis a, aliquam tempus magna. In pharetra metus tellus, at tempus orci pulvinar nec. Sed consectetur dolor risus, sit amet eleifend sapien molestie in. Etiam ac quam lacus. Sed aliquet mauris tortor, eget lacinia nisi rutrum a. `,
             },
+        ],
+        imageTestimonials: [
+            {
+                src: "assets/images/reviews/review_1.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_2.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_3.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_4.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            }
         ],
         links: [
             {
@@ -189,7 +209,7 @@ const cards = [
     {
         activated: true,
         type: "gallery",
-        classes: "h1 container text-center p-3 my-3",
+        classes: "h1 container-fluid text-center p-3 my-3",
         title: "gallery",
         titleClasses: "text-uppercase",
         imageClasses: "col-lg-3 col-md-6 rounded mx-auto d-block m-1",

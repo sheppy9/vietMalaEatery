@@ -135,8 +135,10 @@
 				<!-- reviews -->
 				<div v-if="card.type == 'reviews' && card.activated" :class="card.classes">
 					<p :class="card.titleClasses" v-html="$t(card.title)"></p>
-					<div class="container d-flex justify-content-center row d-gap gap-3">
-						<div v-for="testimonial in card.testimonials" :class="card.testimonialClasses">
+					<div class="container-fluid d-flex justify-content-center row d-gap gap-3">
+
+						<!-- Handle text testimonial type -->
+						<div v-if="card.testimonialType == 'text'" v-for="testimonial in card.textTestimonials" :class="card.testimonialClasses">
 							<div :class="card.testimonialContentClasses" v-html="testimonial.content"></div>
 							<div class="d-flex">
 								<div v-for="i in testimonial.noOfStar">
@@ -148,8 +150,16 @@
 							</div>
 							<div :class="card.testimonialCommentByClasses" v-html="testimonial.commentedBy"></div>
 						</div>
+						<!-- END Handle text testimonial type -->
+
+						<!-- Handle image testimonial type -->
+						<div v-else class="row">
+							<img v-for="testimonial in card.imageTestimonials" :src="testimonial.src" :class="testimonial.classes">
+						</div>
+						<!-- END Handle image testimonial type -->
+
 					</div>
-					<div class="h2 container text-center">
+					<div class=" h2 container text-center">
 						<a v-for="link in card.links" :href="link.href" :class="card.linkClasses" :target="link.target" v-html="$t(link.text)"></a>
 					</div>
 				</div>
