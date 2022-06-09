@@ -18,17 +18,25 @@ const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
         shopName: "Tê Tê - Vịt lắc Mala",
-        introduction1: "Braised With Over 11 Spices",
-        introduction2: "Special Chili Salt and Spices",
-        introduction3: "Special Mala Sauce",
-        introduction4: "Packed With Care",
-        introduction5: "Easy To Use",
-        introduction6: "Fresh Food Daily",
+        introduction1: "The dishes are carefully braised in soup, with more than 11 herbs. When eaten, it has a mild numbing taste from the spiciness of the Sichuan dried chili.",
+        introduction2: "Served with the restaurant's special rich mala sauce, guests can choose the spiciness and numbing taste to suit their taste buds.",
+        introduction3: "The shop has mala chili powder for dipping, which provides additoonal numbing and spicy taste making it delicious to eat.",
+        introduction4: "The dishes are handmade, chemical-free and packed fresh daily.",
+        introduction5: "The packaging process is clean, vacuum-sealed and safe to use.",
+        introduction6: "Can be stored in the freezer and heated for 3 minutes and can be used immediately.",
         menu: "Menu",
         gallery: "Gallery",
         contact: "Contact",
         address: "Address",
         operatingHours: "Operating Hours",
+        latestUpdates: "Latest Updates",
+        testimonial: "Testimonial",
+        writeAReview: "Write A Review",
+        readMore: "Read More",
+        history: "History",
+        map: "Map",
+        operatingHourContent: "Monday - Sunday:<br/>01:00 PM - 09:00 PM",
+        rightReservedMsg: " . All Rights Reserved."
     },
     vi: {
         shopName: "Tê Tê - Vịt lắc Mala",
@@ -40,9 +48,17 @@ const i18nMessages = {
         introduction6: "Có thể trữ ngăn đông và làm nóng 3p có thể sử dụng được ngay.",
         menu: "Menu",
         gallery: "Thư viện ảnh",
-        contact: "gần gủi",
+        contact: "Gần gủi",
         address: "địa chỉ",
         operatingHours: "Giờ hoạt động",
+        latestUpdates: "Cập nhật mới nhất",
+        testimonial: "Tiền hoặc vật tặng",
+        writeAReview: "Viết đánh giá",
+        readMore: "Đọc thêm",
+        history: "Sử học",
+        map: "Bản đồ",
+        operatingHourContent: "Thứ hai - Chủ nhật:<br/>01:00 PM - 09:00 PM",
+        rightReservedMsg: " . Đã đăng ký Bản quyền."
     },
 };
 
@@ -70,14 +86,14 @@ const cards = [
     {
         activated: true,
         type: "header",
-        classes: "bg-light bg-gradient",
+        classes: "h1",
         image: "assets/images/header/LandingPage.jpg",
         text: "shopName",
     },
     {
         activated: true,
         type: "introduction",
-        classes: "container bg-light bg-gradient text-center",
+        classes: "h3 container text-center",
         texting: [{ text: "introduction1" }, { text: "introduction2" }, { text: "introduction3" }, { text: "introduction4" }, { text: "introduction5" }, { text: "introduction6" }],
     },
     {
@@ -88,9 +104,9 @@ const cards = [
     {
         activated: true,
         type: "updates",
-        classes: "bg-light bg-gradient",
-        title: "Latest Updates",
-        titleClasses: "h1 text-decoration-underline text-center pb-4 pt-4",
+        classes: "",
+        title: "latestUpdates",
+        titleClasses: "h2 text-center pb-4 pt-4",
         text: "<h3 class='text-center pb-4 pt-4'>Latest Updates</h3>",
         activated: true,
         imageClasses: "col-lg-3 col-md-6 rounded mx-auto d-block m-1",
@@ -114,7 +130,7 @@ const cards = [
         activated: false,
         type: "menu",
         classes: "bg-light bg-gradient container text-center p-3 my-3",
-        titleClasses: "h1 text-decoration-underline",
+        titleClasses: "h2 text-decoration-underline",
         title: "menu",
         image1: "assets/images/menu/malaMenu1.jpg",
         image2: "assets/images/menu/malaMenu2.jpg",
@@ -122,16 +138,18 @@ const cards = [
     {
         activated: true,
         type: "reviews",
-        classes: "container text-center p-3 my-3",
-        title: "Testimonial",
-        titleClasses: "h1 text-decoration-underline",
+        classes: "container-fluid text-center p-3 my-3",
+        title: "testimonial",
+        titleClasses: "h2",
         footerClasses: "container text-center",
         linkClasses: "mx-2 text-uppercase",
         testimonialClasses: "col-lg-3 col-md-12 my-3",
         testimonialContentClasses: "text-start text-break h3",
         testimonialCommentByClasses: "text-start text-secondary",
         testimonialMaxStar: 5,
-        testimonials: [
+        // testimonialType: "text",
+        testimonialType: "image",
+        textTestimonials: [
             {
                 noOfStar: 4,
                 commentedBy: "Suju",
@@ -148,34 +166,52 @@ const cards = [
                 content: ` Nunc venenatis arcu id maximus condimentum. Aliquam erat volutpat. Ut consequat odio et libero commodo, at molestie risus pellentesque. Phasellus aliquet ante vel odio ornare, sit amet varius urna venenatis. Donec luctus viverra sapien, eget tincidunt lectus iaculis a. Nulla purus odio, facilisis id turpis a, aliquam tempus magna. In pharetra metus tellus, at tempus orci pulvinar nec. Sed consectetur dolor risus, sit amet eleifend sapien molestie in. Etiam ac quam lacus. Sed aliquet mauris tortor, eget lacinia nisi rutrum a. `,
             },
         ],
+        imageTestimonials: [
+            {
+                src: "assets/images/reviews/review_1.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_2.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_3.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            },
+            {
+                src: "assets/images/reviews/review_4.jpg",
+                classes: "col-lg-3 col-md-6 col-sm-12 rounded p-3"
+            }
+        ],
         links: [
             {
                 href: "https://search.google.com/local/writereview?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE",
-                text: "Write a review",
+                text: "writeAReview",
                 target: "_blank",
             },
             {
                 href: "https://search.google.com/local/reviews?placeid=ChIJR7Q5jYUvdTERSgJFW1QFTgE",
-                text: "Read more",
+                text: "readMore",
                 target: "_blank",
             },
         ],
     },
     {
-        activated: true,
+        activated: false,
         type: "history",
         classes: "container bg-light text-center col-lg-12 col-md-12 p-3 my-3",
-        title: "## History ##",
-        titleClasses: "h1 text-decoration-underline",
+        title: "History",
+        titleClasses: "h2",
         content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
         contentClasses: "container my-5 h3",
     },
     {
         activated: true,
         type: "gallery",
-        classes: "h1 container text-center p-3 my-3",
+        classes: "h2 container-fluid text-center p-3 my-3",
         title: "gallery",
-        titleClasses: "text-uppercase",
+        titleClasses: "h1 ",
         imageClasses: "col-lg-3 col-md-6 rounded mx-auto d-block m-1",
         images: [
             {
@@ -199,9 +235,9 @@ const cards = [
     {
         activated: true,
         type: "map",
-        classes: "container text-center p-3 my-3",
-        title: "",
-        titleClasses: "",
+        classes: "container-fluid h2 text-center",
+        title: "map",
+        titleClasses: "text-upper",
         image: "assets/images/map/map.jpg",
         imageClasses: "rounded mx-auto d-block img-thumbnail",
         imageLink:
@@ -210,11 +246,11 @@ const cards = [
     {
         activated: true,
         type: "contact",
-        classes: "h1 container text-center p-3 my-3",
+        classes: "h2 container-fluid text-center p-3 my-3",
         contents: [
             {
                 icon: "me-1 fas fa-phone-alt",
-                classes: "p-0 m-1 col-lg-3 col-md-10 text-center",
+                classes: "p-0 m-1 col-lg-3 col-md-11 text-center",
                 header: "contact",
                 openInNewTab: false,
                 link: "tel:+840941336161",
@@ -222,7 +258,7 @@ const cards = [
             },
             {
                 icon: "me-1 fas fa-map",
-                classes: "p-0 m-1 col-lg-3 col-md-10 text-center",
+                classes: "p-0 m-1 col-lg-3 col-md-11 text-center",
                 header: "address",
                 openInNewTab: true,
                 link: "https://www.google.com/maps/dir//161+%C4%90.+Cao+Th%E1%BA%AFng,+Ph%C6%B0%E1%BB%9Dng+11,+Qu%E1%BA%ADn+10,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.7734749,106.6757492,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752f20c9128077:0xf59871ecd4cd4925!2m2!1d106.6779379!2d10.7734696",
@@ -230,10 +266,10 @@ const cards = [
             },
             {
                 icon: 'me-1 fas fa-clock',
-                classes: 'p-0 m-1 col-lg-3 col-md-10 text-center',
+                classes: 'p-0 m-1 col-lg-3 col-md-11 text-center',
                 header: 'operatingHours',
                 contents: [
-                    'Monday - Sunday: 01:00 PM - 09:00 PM'
+                    'operatingHourContent'
                 ],
             }
         ]
@@ -246,7 +282,7 @@ const cards = [
         footerClasses: "h3 fst-italic d-flex justify-content-between align-items-baseline",
         copyrightYear: "2022 ",
         shop: "shopName",
-        copyrightMessage: " . All Rights Reserved.",
+        copyrightMessage: "rightReservedMsg",
         socialMedias: [
             {
                 link: "https://www.facebook.com/tetevitlacmala",
