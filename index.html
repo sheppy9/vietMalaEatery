@@ -53,7 +53,7 @@
 					<div>
 						<img class="mx-auto img-fluid w-100 h-auto" alt="Header Image" :src="card.image" loading="lazy" />
 					</div>
-					<p class="h1 text-center cust-font-inkFree p-3 my-3" v-html="$t(card.text)"></p>
+					<p class="h1 text-center cust-font-inkFree p-3 my-3" style="font-weight: bold;" v-html="$t(card.text)"></p>
 				</div>
 				<!-- END header -->
 
@@ -63,7 +63,7 @@
 						<div class="row">
 							<div class="col-lg-6 col-md-12 p-5" v-for="text in card.texting">
 								<em class="fa-solid fa-check"></em>
-								<span class="h2" v-html="$t(text.text)"></span>
+								<span class="h3" v-html="$t(text.text)"></span>
 							</div>
 						</div>
 					</div>
