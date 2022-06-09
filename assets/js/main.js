@@ -18,12 +18,12 @@ const fallbackLanguage = languages[1].code;
 const i18nMessages = {
     en: {
         shopName: "Tê Tê - Vịt lắc Mala",
-        introduction1: "Các món được om kĩ trong nước soup có hơn 11 vị thảo mộc nên khi ăn có vị vừa tê nhẹ của hoa tiêu, vị cay vừa phải của ớt khô tứ xuyên.",
-        introduction2: "Ăn kèm với sốt mala đặc biệt của quán sẽ đậm đà hơn, khách có thể chọn vị cay và tê phù hợp với khẩu vị.",
-        introduction3: "Ngoài ra, quán còn có bột ớt mala để chấm cùng, bột ớt ngoài vị tê và cay thì vị béo nhẹ của đậu phộng, ăn kèm ngon hết sẩy.",
-        introduction4: "Các món được nấu thủ công, không hoá chất, và đóng gói mới hằng ngày.",
-        introduction5: "Quy trình đóng gói sạch sẽ, được hút chân không nên an tâm sử dụng nhé.",
-        introduction6: "Có thể trữ ngăn đông và làm nóng 3p có thể sử dụng được ngay.",
+        introduction1: "Braised With Over 11 Spices",
+        introduction2: "Special Chili Salt and Spices",
+        introduction3: "Special Mala Sauce",
+        introduction4: "Packed With Care",
+        introduction5: "Easy To Use",
+        introduction6: "Fresh Food Daily",
         menu: "Menu",
         gallery: "Gallery",
         contact: "Contact",
