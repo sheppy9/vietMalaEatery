@@ -1,5 +1,5 @@
 // configurations
-const profile = "dev";
+const profile = "prod";
 const version = "0.0.1";
 
 const metadata = [
